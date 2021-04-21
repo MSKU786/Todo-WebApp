@@ -12,7 +12,7 @@ const Todo = require('../models/todo_info');
 console.log("router loaded");
 
 router.get('/',function(req,res){
-    Todo.find({},function(err, newTodo)
+    Todo.find({},function(err, todos)
     {
         if(err)
         {
@@ -20,10 +20,12 @@ router.get('/',function(req,res){
             return;
         }
         return res.render('home',{
-            todo_list = newTodo;
+            todo_list : todos
         })
     })
 });
+
+
 router.use('/user', require('./users'));
 module.exports = router;
 
