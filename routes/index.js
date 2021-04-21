@@ -3,18 +3,31 @@ const express = require("express");
 const router = express.Router();
 const homeController = require('../controllers/home_controller');
 
+const db = require('../config/mongoose.js');
+//Require schema from todo_info.js
+const Todo = require('../models/todo_info');
+// Parser for form 
+// used urlencoded to get the body of the form
 
 console.log("router loaded");
 
-router.get('/',homeController.home);
+router.get('/',function(req,res){
+    Todo.find({},function(err, newTodo)
+    {
+        if(err)
+        {
+            console.log('error in fetching contacts');
+            return;
+        }
+        return res.render('home',{
+            todo_list = newTodo;
+        })
+    })
+});
 router.use('/user', require('./users'));
 module.exports = router;
 
-const db = require('./config/mongoose.js');
-//Require schema from todo_info.js
-const Todo = require('./models/todo_info');
-// Parser for form 
-// used urlencoded to get the body of the form
+
 router.use(express.urlencoded());
 
 
