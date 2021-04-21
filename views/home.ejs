@@ -14,16 +14,16 @@
   
         <h3><i class="far fa-id-card"></i>Contact List</h3>
 
-        <form action="/add_task" method="POST">
+        <form action="/add_task"  method="POST">
             <div class="container">
                 <div class = "col-12 mt-4">
                     <h2>Description</h2>
-                    <input class = "form-control input-lg border-0"type="text" name="name" required> 
+                    <input class = "form-control input-lg border-0"type="text" name="description" required> 
                 </div>
                 <div class="row mt-4">
                     <div class = "col-6">
                         <h5>Category:</h5>
-                        <select class = "border-0" id="Category" name="Category"required>
+                        <select class = "border-0" id="Category" name="Category" required>
                             <option value="Personal">Personal</option>
                             <option value="Work">Work</option>
                             <option value="School">School</option>
@@ -33,7 +33,7 @@
                     </div>
                     <div class = "col-6">
                         <h5>Date</h5>
-                        <input class ="border-0" type="text" id="my_date_picker" placeholder="dd-mm-yy" required>
+                        <input class ="border-0"  name="date" type="text" id="my_date_picker" placeholder="dd-mm-yy" required>
                     </div>
                 </div>
                 <button type="submit">Add Task</button>

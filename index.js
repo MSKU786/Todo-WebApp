@@ -11,31 +11,10 @@ app.use('/',require('./routes'));
 app.set('view engine','ejs');
 app.set('views','./views');
 
+//Setting up the parser
 
 app.use(express.static('assets'));
 
-app.post('/add_task', function(req, res){
-    // contactList.push(
-    //     {
-    //         name: req.body.name,
-    //         phone: req.body.phone
-    //     }
-    // )
-    // Contact.create({
-    //     name: req.body.name,
-    //     phone: req.body.phone
-    // }, function(err, newContact)
-    // {
-    //     if(err){
-    //         console.log('error in creating contact');
-    //         return;
-    //     }
-    //     console.log("******^&&",newContact);
-    //     return res.redirect('back');  
-    // })
-    console.log(req.body);
-    return res.redirect('back');
-});
 
 app.listen(port, function(err){
     if(err)
