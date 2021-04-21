@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const port = 4000
 
-
 const db = require('./config/mongoose.js');
+
+//Require schema from todo_info.js
+const Conatact = require('./models/contact');
 
 //Use express router
 app.use('/',require('./routes'));
