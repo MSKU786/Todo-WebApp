@@ -3,6 +3,7 @@ const app = express();
 const port = 4000
 
 
+const db = require('./config/mongoose.js');
 
 //Use express router
 app.use('/',require('./routes'));
