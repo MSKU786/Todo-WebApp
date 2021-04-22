@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
-const homeController = require('../controllers/home_controller');
+
 
 const db = require('../config/mongoose.js');
 //Require schema from todo_info.js
@@ -26,7 +26,7 @@ router.get('/',function(req,res){
 });
 
 
-router.use('/user', require('./users'));
+
 module.exports = router;
 
 
@@ -47,4 +47,28 @@ router.post('/add_task', function(req, res){
         return res.redirect('./');  
     });
   
+});
+
+router.post('/remove', function(req,res)
+{
+
+    let num = req.body.checkbox;    
+    //find the data in contact database using id and delete it
+    let i=0;
+    for(let j in num)
+    {
+        Todo.findByIdAndDelete(num[j],function(err){
+        console.log(num[j]);
+        if(err)
+        {
+            console.log('error in deleting an object from database');
+            return;
+        }
+        if(!num)
+        {
+            return res.redirect('/');
+        }
+   });
+}
+    return res.redirect('/');
 });
