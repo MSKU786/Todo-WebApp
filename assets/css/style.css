@@ -53,11 +53,16 @@ h3{
 }
 
 .container{
-    align-items: center;
-    border: 1px solid #EEE2D6;
-    padding: 5px;
+    border: 1px solid #BAB2B5;
+    border-radius: 0%;
+    width: 100%;
+    padding: 5px 20px;
 }
 
+#listed{
+    height: 4rem;
+    display: inline-block;
+}
 .date{
     font-size: 0.9rem;
     margin: 2px;
@@ -65,4 +70,59 @@ h3{
 
 i{
     font-size: 1.2rem;
+}
+
+.Personal{
+    position: absolute;
+    background-color: #FF4136;
+    text-align: center;
+    height: 3rem;
+    width: 8rem;
+    padding: 5px 10px;
+    margin-top: 5px;
+    color: white;
+}
+
+.School{
+    position: absolute;
+    background-color: #A9A9A9;
+    text-align: center;
+    height: 3rem;
+    width: 8rem;
+    padding: 5px 10px;
+    margin-top: 5px;
+    color: white;
+}
+
+.Cleaning{
+    position: absolute;
+    background-color: #BA55D3;
+    text-align: center;
+    height: 3rem;
+    width: 8rem;
+    padding: 5px 10px;
+    margin-top: 5px;
+    color: white;
+}
+
+.Other{
+    position: absolute;
+    background-color: #20BF9F;
+    text-align: center;
+    height: 3rem;
+    width: 8rem;
+    padding: 5px 10px;
+    margin-top: 5px;
+    color: white;
+}
+
+.Work{
+    position: absolute;
+    background-color: #00CED1;
+    text-align: center;
+    height: 3rem;
+    width: 8rem;
+    padding: 5px 10px;
+    margin-top: 5px;
+    color: white;
 }
