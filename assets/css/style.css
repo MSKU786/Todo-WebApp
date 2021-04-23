@@ -1,5 +1,25 @@
 body{
-    background-color: antiquewhite;
-
+    background-color: #EEE2D6;
+    text-align: center;
     margin: 0;
+    padding: 2%;
+}
+
+div{
+    text-align: left;
+    background-color: #EDC7B7;
+    color: #123C69;
+}
+
+form{
+    text-align: left;
+}
+h3{
+    color: #AC3B61;
+}
+
+#styleList{
+    display: flex;
+    width: 90%;
+    margin-left: 2rem;
 }

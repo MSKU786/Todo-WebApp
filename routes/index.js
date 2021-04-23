@@ -34,6 +34,9 @@ router.use(express.urlencoded());
 
 
 router.post('/add_task', function(req, res){
+    var dateString = req.body.date;
+    if(dateString=="")
+        req.body.date="No Deadline";
     Todo.create({
         description: req.body.description,
         Category : req.body.Category,

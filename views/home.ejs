@@ -12,12 +12,12 @@
     </head>
     <body>
   
-        <h3><i class="far fa-id-card"></i>Contact List</h3>
+        <h3><i class="fas fa-clipboard-list"></i></i>Todo List</h3>
 
         <form action="/add_task"  method="POST">
-            <div class="container">
+            <div class="container p-3">
                 <div class = "col-12 mt-4">
-                    <h2>Description</h2>
+                    <h4>Description</h4>
                     <input class = "form-control input-lg border-0"type="text" name="description" required> 
                 </div>
                 <div class="row mt-4">
@@ -33,29 +33,34 @@
                     </div>
                     <div class = "col-6">
                         <h5>Date</h5>
-                        <input class ="border-0"  name="date" type="text" id="my_date_picker" placeholder="dd-mm-yy" required>
+                        <input class ="border-0"  name="date" type="text" id="my_date_picker" placeholder="dd-mm-yy" >
                     </div>
                 </div>
-                <button type="submit">Add Task</button>
             </div> 
-       </form>
+        <span>
+            <button class="btn btn-success btn-lg m-3" id="addButton" type="submit">Add Task</button>
+        </form>
        <form  action="/remove"  method="POST">
-       <button name = "remove"  id = "remove" type="submit"> Remove Task</button>
-       <h3><i class="far fa-id-card"></i>Contact List</h3>
-        <div class="container">
+            <button class="btn btn-danger btn-lg m-3"  id = "removeButton" name = "remove"  id = "remove" type="submit"> Remove Task</button>
+       </span>
+        
             <% for(let v of todo_list)
                 {%>
-                    <div>
-                        <div class = "container">
-                            <span class="col-4 d-inline-block p-2 h5"><%= v.description %></span>
-                            <span class="col-3 d-inline-block p-2 h5"><%= v.Category %></span>
-                            <span class="col-3 d-inline-block p-2 h5"><%= v.date %></span>
-                            <input id="<%=v._id%>" type="checkbox" name="checkbox" value="<%=v._id%>">
+                    <div class= "listContainer">
+                        <div> 
+                            <input class="form-check-input" id="<%=v._id%>" type="checkbox" name="checkbox" value="<%=v._id%>">
                         </div>
+                        <div>
+                            <div class="description"><%= v.description %></div>
+                            <div class="date"><%= v.date %></div> 
+                        </div>        
+                        <div>
+                            <span class="category"><%= v.Category %></span>
+                        </div>                 
                     </div>
-            <%}
+                <%}
             %>
-        </div>
+       
         </form>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
         <script src="/js/script1.js"></script>
