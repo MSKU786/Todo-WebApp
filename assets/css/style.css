@@ -13,6 +13,7 @@ div{
 
 form{
     text-align: left;
+
 }
 h3{
     color: #AC3B61;
@@ -22,4 +23,26 @@ h3{
     display: flex;
     width: 90%;
     margin-left: 2rem;
+}
+
+
+
+#block{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 1rem;
+    width: 85vw;
+    margin-left: 6%;
+}
+
+#button-block{
+    width: 90%;
+    height: 4rem;
+    position: relative;
+    text-align: center;
+    background-color: #EEE2D6;
+    margin: 1rem;
+    margin-left: 6%;
+   
 }
