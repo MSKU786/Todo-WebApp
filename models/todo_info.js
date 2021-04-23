@@ -1,7 +1,7 @@
 //Require the library
 const mongoose = require('mongoose');
 
-//Defining the Schema of data 
+//Defining the Schema of data description ,category and date
 const todoSchema = new mongoose.Schema({
     description: {
         type: String,

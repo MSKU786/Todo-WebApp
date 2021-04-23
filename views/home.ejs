@@ -1,6 +1,7 @@
 <html>
     <head>
         <title> TODO </title>
+        <!-- Different styling sheet links for bootstarp and jquery -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> 
         <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'rel='stylesheet'>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -13,14 +14,17 @@
     <body>
   
         <h3><i class="fas fa-clipboard-list" style="font-size: 2rem;"></i>&nbsp; Todo List</h3>
-
+        <!-- This form is for sending data to server -->
         <form action="/add_task"  method="POST">
             <div class="container p-3">
+                <!-- Description container -->
                 <div class = "col-12 mt-2 p-2">
                     <h4>Description</h4>
                     <input class = "form-control input-lg border-0"type="text" name="description" placeholder="Buy Eggs..." required> 
                 </div>
+                <!-- Date and Category contianer different option is selected -->
                 <div class="row mt-1 mb-4 p-2">
+                    <!-- Category block -->
                     <div class = "col-6">
                         <h5>Category:</h5>
                         <select class = "border-0 w-100 h-75" id="Category" name="Category" required>
@@ -31,21 +35,25 @@
                             <option value="Other">Other</option>
                           </select>
                     </div>
+                    <!-- Date blocks -->
                     <div class = "col-6">
                         <h5>Date</h5>
                         <input class ="border-0 w-100 h-75"  name="date" type="text" id="my_date_picker" placeholder="dd-mm-yy" >
                     </div>
                 </div>
             </div> 
+            <!-- Add button -->
             <div id="button-block">
                 <button class="btn btn-success btn-lg " id="addButton" type="submit"><i class="fas fa-plus"></i>&nbsp; Add Task</button>
             </div>
         </form>
+     <!-- This form is for checked box option -->
        <form  action="/remove"  method="POST">
+        <!-- Remove Button -->
             <div id="button-block">
                 <button class="btn btn-danger btn-lg" name = "remove"  id = "remove" type="submit"> <i class="far fa-trash-alt"></i>&nbsp; Remove Task</button>
             </div>
-
+            <!-- Whenver we add of delete this block will update according to the dateabase -->
             <div id="block">
             
                 <% for(let v of todo_list)
