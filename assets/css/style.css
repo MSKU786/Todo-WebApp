@@ -9,6 +9,9 @@ div{
     text-align: left;
     background-color: #EDC7B7;
     color: #123C69;
+    font-size: 1.2rem;
+    font-weight: 600;
+
 }
 
 form{
@@ -31,10 +34,12 @@ h3{
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    background-color: #EEE2D6;
     margin-top: 1rem;
     width: 85vw;
     margin-left: 6%;
 }
+
 
 #button-block{
     width: 90%;
@@ -42,7 +47,22 @@ h3{
     position: relative;
     text-align: center;
     background-color: #EEE2D6;
-    margin: 1rem;
+    margin: 0.5rem;
     margin-left: 6%;
    
+}
+
+.container{
+    align-items: center;
+    border: 1px solid #EEE2D6;
+    padding: 5px;
+}
+
+.date{
+    font-size: 0.9rem;
+    margin: 2px;
+}
+
+i{
+    font-size: 1.2rem;
 }

@@ -16,14 +16,14 @@
 
         <form action="/add_task"  method="POST">
             <div class="container p-3">
-                <div class = "col-12 mt-4">
+                <div class = "col-12 mt-2 p-2">
                     <h4>Description</h4>
                     <input class = "form-control input-lg border-0"type="text" name="description" required> 
                 </div>
-                <div class="row mt-4 mb-4">
+                <div class="row mt-1 mb-4 p-2">
                     <div class = "col-6">
                         <h5>Category:</h5>
-                        <select class = "border-0" id="Category" name="Category" required>
+                        <select class = "border-0 w-100 h-75" id="Category" name="Category" required>
                             <option value="Personal">Personal</option>
                             <option value="Work">Work</option>
                             <option value="School">School</option>
@@ -33,34 +33,36 @@
                     </div>
                     <div class = "col-6">
                         <h5>Date</h5>
-                        <input class ="border-0"  name="date" type="text" id="my_date_picker" placeholder="dd-mm-yy" >
+                        <input class ="border-0 w-100 h-75"  name="date" type="text" id="my_date_picker" placeholder="dd-mm-yy" >
                     </div>
                 </div>
             </div> 
             <div id="button-block">
-                <button class="btn btn-success btn-lg " id="addButton" type="submit">Add Task</button>
+                <button class="btn btn-success btn-lg " id="addButton" type="submit"><i class="fas fa-plus"></i>&nbsp; Add Task</button>
             </div>
         </form>
        <form  action="/remove"  method="POST">
             <div id="button-block">
-                <button class="btn btn-danger btn-lg "  id = "removeButton" name = "remove"  id = "remove" type="submit"> Remove Task</button>
+                <button class="btn btn-danger btn-lg" name = "remove"  id = "remove" type="submit"> <i class="far fa-trash-alt"></i>&nbsp; Remove Task</button>
             </div>
 
             <div id="block">
             
                 <% for(let v of todo_list)
                     {%>
-                        <div class= "listContainer">
-                            <div> 
-                                <input class="form-check-input" id="<%=v._id%>" type="checkbox" name="checkbox" value="<%=v._id%>">
-                            </div>
-                            <div>
-                                <div class="description"><%= v.description %></div>
-                                <div class="date"><%= v.date %></div> 
-                            </div>        
-                            <div>
-                                <span class="category"><%= v.Category %></span>
-                            </div>                 
+                        <div class= "container m-1">
+                            <div class = "row">
+                                <div class="col-1"> 
+                                    <input class="form-check-input" id="<%=v._id%>" type="checkbox" name="checkbox" value="<%=v._id%>">
+                                </div>
+                                <div class="col-8">
+                                    <div class="description"><%= v.description %></div>
+                                    <div class="date"><i class="far fa-calendar-alt"></i>&nbsp; &nbsp;<%= v.date %></div> 
+                                </div>        
+                                <div class="col-3">
+                                    <span class="category"><%= v.Category %></span>
+                                </div>     
+                            </div>            
                         </div>
                     <%}
                 %>
