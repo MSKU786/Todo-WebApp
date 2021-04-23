@@ -25,7 +25,11 @@ router.get('/',function(req,res){
     })
 });
 
-
+router.get('*', function(req, res){
+    return res.render('error',{
+        title: "Sorry, Page not found"
+    })
+});
 
 module.exports = router;
 
