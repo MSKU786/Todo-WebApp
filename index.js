@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 //Port number where our localhost will be executed
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 
 //Use express router
