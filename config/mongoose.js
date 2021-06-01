@@ -2,7 +2,11 @@
 const mongoose = require('mongoose');
 
 //Connecting moongooose to the database name todo_db
-mongoose.connect('mongodb://localhost/todo_db');
+
+mongoose.connect('mongodb://localhost/todo_db',
+    { useNewUrlParser: true,
+      useUnifiedTopology: true }
+    );
 
 //acquire the connection
 const db = mongoose.connection;
