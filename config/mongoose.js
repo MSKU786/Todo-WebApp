@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 //Connecting moongooose to the database name todo_db
 
-mongoose.connect('mongodb://localhost/todo_db',
+mongoose.connect(MONGO_URI,
     { useNewUrlParser: true,
       useUnifiedTopology: true }
     );
