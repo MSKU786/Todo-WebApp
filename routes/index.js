@@ -60,22 +60,30 @@ router.post('/remove', function(req,res)
     //find the data in contact database using id and delete it
     let i=0;
     //For loop because user can select mulitple items
+    //If only one elemetn is present then else part will run
     for(let j in num)
     {
         //find and delete function in Todo
-        Todo.findByIdAndDelete(num[j],function(err){
+        if(num[j].length>4){
+            Todo.findByIdAndDelete(num[j],function(err){
         console.log(num[j]);
         if(err)
         {
             console.log('error in deleting an object from database');
             return;
         }
-        if(!num)
-        {
-            return res.redirect('/');
-        }
-   });
-}
+         });}
+        else{
+            Todo.findByIdAndDelete(num,function(err){
+        //return res.redirect('/');
+             if(err)
+            {
+                console.log('error in deleting an object from database');
+            return;
+             }
+          });
+    }
+    }
     return res.redirect('/');
 });
 
